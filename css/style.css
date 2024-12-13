@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  border: 5px solid rgb(84, 83, 83);
+}
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  row-gap: 1em;
+  width: 80%;
+}
+
+.menu__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
