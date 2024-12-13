@@ -50,12 +50,12 @@ img:hover {
   }
 }
 
-.menu__img:nth-child(4n + 1) img {
-  border-color: red;
-}
-
 .menu__img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.menu__img:nth-child(4n + 1) img {
+  border-color: red;
 }
