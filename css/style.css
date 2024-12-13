@@ -5,11 +5,20 @@ body {
 
 img {
   border: 5px solid rgb(84, 83, 83);
+  width: 85%;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  transition: 0.3s;
 }
+
+img:hover {
+  border-color: yellow !important;
+  transform: rotate(45deg);
+}
+
 .main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 10px;
   row-gap: 1em;
   width: 80%;
 }
