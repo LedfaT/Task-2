@@ -17,7 +17,7 @@ html {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 1em;
-  width: 80%;
+  width: 75%;
 }
 
 @media (max-width: 900px) {

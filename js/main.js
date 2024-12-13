@@ -1,6 +1,6 @@
 "use strict";
 
-const images = document.querySelectorAll("img");
+const images = document.querySelectorAll(".img");
 const infomation = document.querySelector(".information");
 const main = document.querySelector(".main__images");
 const btnClose = document.querySelector(".close-button");
