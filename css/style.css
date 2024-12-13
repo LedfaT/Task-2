@@ -1,6 +1,11 @@
-body {
-  display: flex;
-  justify-content: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 img {
@@ -17,6 +22,11 @@ img:hover {
 }
 
 .main {
+  display: flex;
+  justify-content: center;
+}
+
+.main__images {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 1em;
@@ -41,7 +51,6 @@ img:hover {
 @media (max-width: 500px) {
   .main {
     grid-template-columns: repeat(1, 1fr);
-
     width: 60%;
   }
 
