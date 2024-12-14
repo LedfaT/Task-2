@@ -48,6 +48,7 @@ html {
 
 .menu__img {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
 }
@@ -101,6 +102,20 @@ html {
   z-index: 10;
 }
 
+.recovery-button {
+  cursor: pointer;
+}
+
+.delete-button {
+  position: absolute;
+  top: 80%;
+  font-size: 2rem;
+  left: 90%;
+  color: black;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
 .hidden {
   display: none;
 }
