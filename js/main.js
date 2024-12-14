@@ -85,13 +85,12 @@ const printCurrentTime = function () {
 };
 const render = function () {
   main.innerHTML = "";
-  images.forEach(function (_, i) {
+  images.forEach(function (img, i) {
+    const val = img.dataset.num;
     main.insertAdjacentHTML(
       "beforeend",
       ` <div class="menu__img">
-                    <img src="img/${i + 1}.jpg" data-num="${
-        i + 1
-      }" alt="" class="img" /> 
+                    <img src="img/${val}.jpg" data-num="${val}" alt="" class="img" /> 
                  <button class="delete-button">&times;</button>
                 </div>
                    `
@@ -162,9 +161,17 @@ main.addEventListener("click", function (e) {
   const imgContainer = e.target.closest(".menu__img");
   const img = imgContainer.querySelector("img");
 
-  images = images.filter((el) => el.src !== img.src);
+  const imgIndex = images.findIndex(
+    (image) => image.dataset.num === img.dataset.num
+  );
+
+  if (imgIndex !== -1) {
+    images.splice(imgIndex, 1);
+  }
 
   imgContainer.remove();
+
+  render();
 
   setLocalStorage();
 
