@@ -71,7 +71,7 @@ const printCurrentTime = function () {
 
   infomation.insertAdjacentHTML(
     "beforeend",
-    `<p>number of images is ${images.length}</p>
+    `<p>number of images is ${document.querySelectorAll(".img").length}</p>
                 <p>${new Intl.DateTimeFormat(
                   navigator.language,
                   optionsDate
