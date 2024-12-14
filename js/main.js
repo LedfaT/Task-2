@@ -101,14 +101,24 @@ const render = function () {
 };
 
 const setLocalStorage = function () {
-  localStorage.setItem("images", JSON.stringify(images));
+  const imageData = images.map((img) => ({
+    src: img.src,
+    num: img.dataset.num,
+  }));
+  localStorage.setItem("images", JSON.stringify(imageData));
 };
 
 const getLocalStorage = function () {
   const data = JSON.parse(localStorage.getItem("images"));
-
   if (!data) return;
-  images = data;
+  images = data.map((imgData) => {
+    const imgElement = document.createElement("img");
+    imgElement.src = imgData.src;
+    imgElement.dataset.num = imgData.num;
+    imgElement.alt = "";
+    imgElement.classList.add("img");
+    return imgElement;
+  });
 };
 
 const init = function () {
@@ -148,13 +158,17 @@ main.addEventListener("click", function (e) {
 
 main.addEventListener("click", function (e) {
   if (!e.target.matches(".delete-button")) return;
-  const img = e.target.closest("div").querySelector("img");
-  console.log(img);
-  const index = img.dataset.num - 1;
-  images.splice(index, 1);
-  console.log(images);
-  render();
+
+  const imgContainer = e.target.closest(".menu__img");
+  const img = imgContainer.querySelector("img");
+
+  images = images.filter((el) => el.src !== img.src);
+
+  imgContainer.remove();
+
   setLocalStorage();
+
+  printCurrentTime();
 });
 
 const recover = function () {
